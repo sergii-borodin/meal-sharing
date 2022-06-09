@@ -5,7 +5,7 @@ const knex = require('../database')
 //GET. Returns all reservations
 router.get('/', async (request, response) => {
   try {
-    const reservations = await knex('reservation')
+    const reservations = await knex('reservations')
     response.json(reservations)
   } catch (error) {
     throw error
@@ -23,7 +23,7 @@ router.get('/:id', async (request, response) => {
       })
       return
     } else {
-      const reservations = await knex('reservation')
+      const reservations = await knex('reservations')
       const isFoundId = reservations.some(
         (reservation) => reservation.id === reservationId
       )
@@ -34,7 +34,7 @@ router.get('/:id', async (request, response) => {
         })
         return
       }
-      const reservationById = await knex('meal')
+      const reservationById = await knex('meals')
         .select('*')
         .where({ id: reservationId })
       response.json(reservationById)
@@ -61,7 +61,7 @@ router.post('/', async (request, response) => {
       return
     }
     if (context.contact_phonenumber === '') {
-      response.json({ message: 'Please, provide phonenumber' })
+      response.json({ message: 'Please, provide a phone number' })
       return
     }
     if (context.contact_name === '') {
@@ -76,7 +76,7 @@ router.post('/', async (request, response) => {
       response.json({ message: 'Please, provide meal id' })
       return
     }
-    const insertContext = await knex('reservation').insert(context)
+    const insertContext = await knex('reservations').insert(context)
     response.json(insertContext)
   } catch (error) {
     throw error
@@ -94,7 +94,7 @@ router.put('/:id', async (request, response) => {
       })
       return
     } else {
-      const reservations = await knex('reservation')
+      const reservations = await knex('reservations')
       const isFoundId = reservations.some(
         (reservation) => reservation.id === reservationId
       )
@@ -106,7 +106,7 @@ router.put('/:id', async (request, response) => {
         return
       }
       const context = request.body
-      const updateContext = await knex('reservation')
+      const updateContext = await knex('reservations')
         .where({ id: reservationId })
         .update(context)
       response.json(updateContext)
@@ -127,7 +127,7 @@ router.delete('/:id', async (request, response) => {
       })
       return
     } else {
-      const reservations = await knex('reservation')
+      const reservations = await knex('reservations')
       const isFoundId = reservations.some(
         (reservation) => reservation.id === reservationId
       )
@@ -138,7 +138,7 @@ router.delete('/:id', async (request, response) => {
         })
         return
       }
-      const deleteReservation = await knex('reservation')
+      const deleteReservation = await knex('reservations')
         .where({ id: reservationId })
         .del()
       response.json(deleteReservation)
