@@ -44,66 +44,6 @@ router.get('/', async (request, response) => {
   }
 })
 
-// router.get('/', async (request, response) => {
-//   try {
-//     const { maxPrice, availableReservations, title, createdAfter, limit } =
-//       request.query
-//     let meals = await knex('meals')
-
-//     // Get meals price smaller than maxPrice
-//     if (maxPrice) {
-//       const mealMaxPrice = parseInt(maxPrice)
-//       meals = await knex('meals').select('*').where('price', '<=', mealMaxPrice)
-//     }
-//     // Get meals that partially match a title
-//     if (title) {
-//       meals = await knex('meals')
-//         .select('*')
-//         .where('title', 'like', `%${title}%`)
-//     }
-//     //Get meals that has been created after the date
-//     if (createdAfter) {
-//       const afterDate = new Date(createdAfter)
-//       meals = await knex('meals')
-//         .select('*')
-//         .where('created_date', '>', afterDate)
-//     }
-//     // Only specific number of meals
-//     if (limit) {
-//       const mealLimit = parseInt(limit)
-//       meals = await knex('meals').select('*').limit(mealLimit)
-//     }
-//     // Get meals that still has available reservations
-//     if (availableReservations) {
-//       meals = await knex('meals')
-//         .leftJoin('reservations', 'meals.id', '=', 'reservations.meal_id')
-//         .select(
-//           'meals.id',
-//           'meals.title',
-//           'meals.description',
-//           'meals.location',
-//           'meals.when',
-//           'meals.created_date',
-//           'meals.price',
-//           'meals.max_reservations',
-//           knex.raw(
-//             '(meals.max_reservations-COALESCE(SUM(reservations.number_of_guests))) AS available_reservation'
-//           )
-//         )
-//         .groupBy('meals.id')
-//         .having(
-//           knex.raw(
-//             '(max_reservations > COALESCE(SUM(reservations.number_of_guests)))'
-//           )
-//         )
-//         .groupBy('meals.id')
-//     }
-//     response.json(meals)
-//   } catch (error) {
-//     throw error
-//   }
-// })
-
 //GET. Returns meal by id
 router.get('/:id', async (request, response) => {
   try {
@@ -155,38 +95,6 @@ router.post('/', async (request, response) => {
         }
       })
     }
-    // if (Object.keys(context).length === 0 || context === {}) {
-    //   response.statusCode(422).json({ message: 'Bad input' })
-    //   return
-    // }
-    // if (context.title === '') {
-    //   response.json({ message: 'Give me title' })
-    //   return
-    // }
-    // if (context.description === '') {
-    //   response.json({ message: 'Give me description' })
-    //   return
-    // }
-    // if (context.location === '') {
-    //   response.json({ message: 'Give me location' })
-    //   return
-    // }
-    // if (context.when === '') {
-    //   response.json({ message: 'Give me date' })
-    //   return
-    // }
-    // if (context.max_reservations === '') {
-    //   response.json({ message: 'Give number of guests' })
-    //   return
-    // }
-    // if (context.price === '') {
-    //   response.json({ message: 'Give me max price' })
-    //   return
-    // }
-    // if (context.created_date === '') {
-    //   response.json({ message: 'Give me created date' })
-    //   return
-    // }
   } catch (error) {
     throw error
   }
@@ -234,12 +142,11 @@ router.delete('/:id', async (request, response) => {
       })
       return
     } else {
-      const meals = await knex('meals')
-      const isFoundId = meals.some((meal) => meal.id === mealId)
-      if (!isFoundId) {
+      const mealById = await knex('meals').select('*').where({ id: mealId })
+      if (mealById.length === 0) {
         response.status(400).json({
           error: "Meal wasn't deleted.",
-          hint: 'Meal with this id does not exist',
+          hint: `Meal with id of ${mealId} does not exist`,
         })
         return
       }
