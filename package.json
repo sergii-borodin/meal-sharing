@@ -6,7 +6,7 @@
     "node": "16.15.0"
   },
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "CI=' ' webpack --mode production",
     "start": "node ./src/backend/server",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon ./src/backend/server",
