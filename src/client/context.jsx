@@ -14,7 +14,7 @@ const getTodayDate = () => {
 }
 
 export function MealsContextProvider({ children }) {
-  const { data, error } = useSWR('/meals', fetcher)
+  const { data, error } = useSWR('/api/meals', fetcher)
   if (error) return 'An error has occurred.'
   if (!data) return 'Loading...'
 
