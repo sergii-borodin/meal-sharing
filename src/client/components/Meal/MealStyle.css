@@ -1,0 +1,40 @@
+.meal {
+  background: whitesmoke;
+  margin-bottom: 2rem;
+  box-shadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s linear;
+  border-radius: 0.25rem;
+  /* display: grid;
+  grid-template-rows: auto 2fr; */
+  /* display: flex;
+
+  width: 300px; */
+
+  background-color: #f1f0f1;
+  color: #2e2d2d;
+  display: flex;
+  flex-direction: column;
+}
+.meal:hover {
+  box-shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.meal img {
+  width: 100%;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.meal-footer {
+  padding: 1.5rem;
+}
+.meal-footer h3,
+.meal-footer h4,
+.meal-footer p {
+  margin-bottom: 0.3rem;
+}
+.meal-footer h3 {
+  font-size: 2rem;
+}
+.meal-footer p {
+  color: grey;
+  margin-bottom: 0.5rem;
+}
