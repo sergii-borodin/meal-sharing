@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Website for sharing meals",
   "engines": {
-    "node": "16.15.0"
+    "node": "16.15.0",
+    "npm": "8.5.5"
   },
   "scripts": {
     "build": "webpack npx webpack-cli --mode production",
