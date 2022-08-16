@@ -8,6 +8,7 @@ import { SingleMeal } from './pages/SingleMeal/SingleMeal'
 import { Error } from './pages/Error/Error'
 //import components
 import { Navbar } from './components/Navbar/Navbar'
+import { Footer } from './components/Footer/Footer'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           </Route>
         </Switch>
       </MealsContextProvider>
+      <Footer />
     </Router>
   )
 }

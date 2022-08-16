@@ -1,10 +1,10 @@
 .navbar {
-  background: whitesmoke;
+  background: rgba(0, 0, 0, 0);
   height: 5rem;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid grey;
-  box-shadow: 2px 1px 1px 0px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid grey;
+  /* box-shadow: 2px 1px 1px 0px rgba(0, 0, 0, 0.5); */
 }
 .nav-center {
   display: flex;

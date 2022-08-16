@@ -1,0 +1,20 @@
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 200px;
+  border-top: 2px solid grey;
+}
+
+.footerItemGeneralStyling {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerContacts {
+  flex-direction: column;
+}
+
+.contactLink :hover {
+  color: grey;
+}
