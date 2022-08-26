@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children } from 'react'
 import { Link } from 'react-router-dom'
 import img0 from '../../assets/images/image0.png'
 import img1 from '../../assets/images/image1.png'
@@ -12,6 +12,7 @@ import img8 from '../../assets/images/image8.png'
 import img9 from '../../assets/images/image9.png'
 import img10 from '../../assets/images/image10.png'
 import './MealStyle.css'
+import { Button } from '../Button/Button'
 
 export const Meal = ({
   id,
@@ -42,14 +43,14 @@ export const Meal = ({
           alt='a meal sharing example'
           height='200px'
         />
-        <div className='meal-footer'>
-          <h3>{title}</h3>
-          <h4>{price}</h4>
-          <p>Seats left {available_reservation}</p>
-          <Link to={`/meal/${id}`} className='btn'>
-            Details
+        <ul className='meal-description'>
+          <li className='meal-title'>{title}</li>
+          <li className='meal-price'>{price} DKK</li>
+          <li>Seats left {available_reservation}</li>
+          <Link to={`/meal/${id}`}>
+            <Button Children={'Detail'}></Button>
           </Link>
-        </div>
+        </ul>
       </div>
     </article>
   )

@@ -29,16 +29,13 @@
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  font-size: 1.2rem;
-  padding: 0.25rem 0.5rem;
-  transition: all 0.3s linear;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
 }
-.btn:hover {
-  color: grey;
-}
+
 @media screen and (min-width: 576px) {
   .meals-center {
     grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));

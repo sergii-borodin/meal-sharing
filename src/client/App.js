@@ -4,7 +4,7 @@ import { MealsContextProvider } from './context'
 //import pages
 import { Home } from './pages/Home/Home'
 import { About } from './pages/About/About'
-import { SingleMeal } from './pages/SingleMeal/SingleMeal'
+import { SingleMealDetail } from './pages/SingleMeal/SingleMealDetail'
 import { Error } from './pages/Error/Error'
 //import components
 import { Navbar } from './components/Navbar/Navbar'
@@ -23,7 +23,7 @@ function App() {
             <About />
           </Route>
           <Route path='/meal/:id'>
-            <SingleMeal />
+            <SingleMealDetail />
           </Route>
           <Route path='*'>
             <Error />

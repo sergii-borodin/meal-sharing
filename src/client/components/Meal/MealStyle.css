@@ -18,18 +18,16 @@
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
-.meal-footer {
+.meal-description {
   padding: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
 }
-.meal-footer h3,
-.meal-footer h4,
-.meal-footer p {
-  margin-bottom: 0.3rem;
+.meal-title {
+  color: black;
+  font-size: 1.5rem;
 }
-.meal-footer h3 {
-  font-size: 2rem;
-}
-.meal-footer p {
-  color: grey;
-  margin-bottom: 0.5rem;
+
+.meal-price {
+  font-size: 1.2rem;
 }
