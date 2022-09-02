@@ -14,6 +14,9 @@ export const Navbar = () => {
             <Link to='/'>HOME</Link>
           </li>
           <li>
+            <Link to='/form'>ADD MEAL</Link>
+          </li>
+          <li>
             <Link to='/about'>ABOUT</Link>
           </li>
         </ul>

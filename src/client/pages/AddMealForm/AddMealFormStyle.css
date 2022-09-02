@@ -1,0 +1,14 @@
+.title {
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 50rem;
+  height: 30rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
