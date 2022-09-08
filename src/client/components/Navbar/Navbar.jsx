@@ -4,8 +4,8 @@ import './NavbarStyle.css'
 
 export const Navbar = () => {
   return (
-    <nav className='navbar'>
-      <div className='nav-center'>
+    <nav className='nav'>
+      <div className='nav-list-container'>
         <Link to='/'>
           <h2>MEAL-SHARING</h2>
         </Link>

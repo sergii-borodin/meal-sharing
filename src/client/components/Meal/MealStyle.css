@@ -1,6 +1,8 @@
 .meal {
-  background: whitesmoke;
+  width: 18rem;
+  height: 27rem;
   margin-bottom: 2rem;
+  background: whitesmoke;
   box-shadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   transition: all 0.3s linear;
   border-radius: 0.25rem;
@@ -30,4 +32,11 @@
 
 .meal-price {
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 650px) {
+  .meal {
+    width: 22rem;
+    height: 27rem;
+  }
 }

@@ -1,43 +1,107 @@
 .section {
-  padding: 5rem 0;
+  margin: 1rem 10rem;
 }
 .section-title {
   font-size: 2rem;
+  font-weight: 1;
   text-transform: capitalize;
   letter-spacing: 0.3rem;
   text-align: center;
   margin-bottom: 3.5rem;
   margin-top: 1rem;
 }
-.meals-center {
-  /* width: 85vw;
-  margin: 0 auto;
-  max-width: 40rem;
+.meals-list-container {
   display: grid;
-  row-gap: 2rem;
-  column-gap: 2rem;
-  align-items: start; */
-
-  /* display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
-  align-items: center; */
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  grid-gap: 20px;
+  grid-gap: 2rem;
 }
 
-.btn {
-  line-height: 50px;
-  height: 50px;
-  text-align: center;
-  width: 250px;
-  cursor: pointer;
+@media screen and (max-width: 1400px) {
+  .meals-list-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
-@media screen and (min-width: 576px) {
-  .meals-center {
-    grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
+@media screen and (max-width: 950px) {
+  .meals-list-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* @media screen and (max-width: 820px) {
+  .filtering-title p {
+    font-size: 1rem;
+  }
+} */
+
+@media screen and (max-width: 650px) {
+  .meals-list-container {
+    grid-template-columns: 1fr;
+  }
+
+  .filtering-checkbox-element,
+  .show-all-button {
+    font-size: 0.8rem;
+  }
+
+  .show-all-button {
+    width: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 486px) {
+  .filtering-category {
+    flex-direction: column;
+    height: unset;
+    gap: 0.181rem;
+  }
+
+  .filtering-title p {
+    font-size: 0.6rem;
+  }
+
+  .filtering-checkbox-element,
+  .show-all-button {
+    font-size: 1.25rem;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width: 437px) {
+  .show-all-button {
+    font-size: 0.9rem;
+  }
+
+  .filtering-checkbox-element {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .filtering-checkbox-element {
+    font-size: 1rem;
+  }
+
+  .filtering-checkbox-mobile-view-for-category .filtering-checkbox-element {
+    width: 7rem;
+  }
+
+  .filtering-category {
+    width: 100%;
+  }
+
+  .filtering-title p {
+    font-size: 0.625rem;
+  }
+
+  .show-all-button {
+    font-size: 1rem;
+  }
+
+  .filtering-checkbox-mobile-view-for-category,
+  .filtering-checkbox-mobile-view-for-participants,
+  .filtering-checkbox-mobile-view-for-timeframe {
+    gap: 0.243rem;
   }
 }

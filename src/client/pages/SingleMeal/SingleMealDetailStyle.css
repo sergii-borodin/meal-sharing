@@ -1,6 +1,64 @@
-.detail-container {
+.meal-description-container {
   margin: 0 auto;
-  width: fit-content;
-  line-height: 30px;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
   font-size: 20px;
+}
+
+.meal-description-title {
+  display: flex;
+  justify-content: center;
+  padding: 0.2rem 0.6rem;
+  padding-left: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  border-bottom-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+
+.meal-description-item {
+  text-align: center;
+  max-width: 50rem;
+  border-radius: 1rem;
+}
+
+.reservation-form {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 25rem;
+}
+
+.reservation-form-input {
+  height: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: transparent;
+}
+
+.no-seats-message {
+  margin: 1rem auto;
+  padding: 1rem 1rem;
+  text-align: center;
+  max-width: 30rem;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+  color: red;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 820px) {
+  .meal-description-container {
+    max-width: 30rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .meal-description-container {
+    max-width: 20rem;
+  }
 }
