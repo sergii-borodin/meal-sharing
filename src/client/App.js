@@ -12,7 +12,6 @@ import { Navbar } from './components/Navbar/Navbar'
 import { Footer } from './components/Footer/Footer'
 
 function App() {
-  const [isFormOpen, setIsFormOpen] = useState(false)
   return (
     <Router>
       <Navbar />
@@ -28,10 +27,7 @@ function App() {
             <SingleMealDetail />
           </Route>
           <Route path='/form'>
-            <AddMealForm
-              setIsFormOpen={setIsFormOpen}
-              isFormOpen={isFormOpen}
-            />
+            <AddMealForm />
           </Route>
           <Route path='*'>
             <Error />

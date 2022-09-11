@@ -1,5 +1,5 @@
 import React from 'react'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { MealsContext } from '../../context'
 import { Button } from '../../components/Button/Button'
@@ -7,7 +7,8 @@ import { Button } from '../../components/Button/Button'
 import './SingleMealDetailStyle.css'
 
 export function SingleMealDetail() {
-  const { meals } = useContext(MealsContext)
+  const { meals, getTodayDate } = useContext(MealsContext)
+
   const { id } = useParams()
   const mealId = Number(id)
   const currentMeal = meals.find((meal) => meal.id === mealId)
@@ -20,6 +21,36 @@ export function SingleMealDetail() {
     available_reservation,
     max_reservations,
   } = currentMeal
+
+  function makeReservation(e) {
+    e.preventDefault()
+    console.log('number_of_guests', e.target.number_of_guests.value)
+    console.log('created_date', getTodayDate())
+    console.log('contact_phonenumber', e.target.contact_phonenumber.value)
+    console.log('contact_name', e.target.contact_name.value)
+    console.log('contact_email', e.target.contact_email.value)
+    console.log('meal_id', mealId)
+
+    fetch('api/reservations', {
+      method: 'POST',
+      body: JSON.stringify({
+        number_of_guests: e.target.number_of_guests.value,
+        created_date: getTodayDate(),
+        contact_phonenumber: e.target.contact_phonenumber.value,
+        contact_name: e.target.contact_name.value,
+        contact_email: e.target.contact_email.value,
+        meal_id: mealId,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((result) => {
+      result.ok
+        ? alert('Reservation made successfully')
+        : alert('Something went wrong. Please, try again')
+    })
+  }
+
   return (
     <section>
       <Link to='/'>
@@ -52,46 +83,39 @@ export function SingleMealDetail() {
       </ul>
 
       {available_reservation > 0 ? (
-        <form
-          className='reservation-form'
-          action='https://localhost:5000/api/reservations/'
-          method='post'
-        >
-          <h3>Fill out the form below to reserve seats:</h3>
+        <form className='form' onSubmit={makeReservation}>
+          <h3>Fill out the form to reserve seats:</h3>
           <input
-            className='reservation-form-input'
+            className='form-input'
             type='number'
             name='number_of_guests'
-            id='number_of_guests'
-            min={1}
+            min='1'
             max={available_reservation}
             placeholder='Enter number of guests'
+            required
           />
           <input
-            className='reservation-form-input'
+            className='form-input'
             type='tel'
             name='contact_phonenumber'
-            id='contact_phonenumber'
             placeholder='Enter contact phone number'
+            required
           />
           <input
-            className='reservation-form-input'
+            className='form-input'
             type='text'
             name='contact_name'
-            id='contact_name'
             placeholder='Enter contact name'
+            required
           />
           <input
-            className='reservation-form-input'
+            className='form-input'
             type='email'
             name='contact_email'
-            id='contact_email'
             placeholder='Enter contact email'
+            required
           />
-          {/* "number_of_guests": 4, "created_date": "2022-04-25",
-        "contact_phonenumber": "22222222", "contact_name": "Dennis",
-      "contact_email": "dennis@mail.com", "meal_id": 71 */}
-          <Button Children={'Make reservation'}></Button>
+          <button type='submit'>Make reservation</button>
         </form>
       ) : (
         <div className='no-seats-message'>

@@ -21,17 +21,14 @@
   border-top-right-radius: 0.25rem;
 }
 .meal-description {
-  padding: 1.5rem;
-  line-height: 2rem;
-  text-align: center;
+  font-size: 1rem;
+  padding: 0 1.5rem;
 }
 .meal-title {
+  text-align: center;
   color: black;
   font-size: 1.5rem;
-}
-
-.meal-price {
-  font-size: 1.2rem;
+  line-height: 2rem;
 }
 
 @media screen and (max-width: 650px) {

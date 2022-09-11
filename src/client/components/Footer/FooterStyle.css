@@ -1,8 +1,8 @@
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 200px;
-  border-top: 2px solid grey;
+  height: 10rem;
+  border-top: 0.1rem solid grey;
 }
 
 .footerItemGeneralStyling {

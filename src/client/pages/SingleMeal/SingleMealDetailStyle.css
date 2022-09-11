@@ -7,33 +7,40 @@
   font-size: 20px;
 }
 
-.meal-description-title {
+.meal-description-item {
+  text-align: center;
+  max-width: 50rem;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   padding: 0.2rem 0.6rem;
   padding-left: 1rem;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
-  border-bottom-right-radius: 2rem;
-  border-top-left-radius: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-.meal-description-item {
-  text-align: center;
-  max-width: 50rem;
-  border-radius: 1rem;
+.meal-description-title {
+  letter-spacing: 0.3rem;
+  margin-right: 0.5rem;
+  font-weight: 800;
 }
 
-.reservation-form {
+.form {
   margin: 1rem auto;
   display: flex;
   flex-direction: column;
-  max-width: 25rem;
+  align-items: center;
+  justify-content: center;
+  width: 40rem;
+  height: 22rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5rem;
 }
 
-.reservation-form-input {
+.form-input {
   height: 2rem;
-  margin-bottom: 1rem;
+  width: 30rem;
   padding: 1rem;
   font-size: 1rem;
   border-radius: 0.3rem;
