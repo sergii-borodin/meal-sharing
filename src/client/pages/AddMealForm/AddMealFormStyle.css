@@ -1,0 +1,44 @@
+.title {
+  text-align: center;
+}
+
+.form {
+  margin: 1rem auto;
+  padding: 3rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40rem;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5rem;
+}
+
+.form-input {
+  height: 2rem;
+  width: 30rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: transparent;
+}
+
+@media screen and (max-width: 650px) {
+  .form {
+    width: 30rem;
+  }
+  .form-input {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .form {
+    width: 20rem;
+  }
+  .form-input {
+    width: 15rem;
+  }
+}

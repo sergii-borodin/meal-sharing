@@ -1,0 +1,33 @@
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 10rem;
+  border-top: 0.1rem solid grey;
+}
+
+.footerItemGeneralStyling {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerContacts {
+  flex-direction: column;
+}
+
+.contactLink :hover {
+  color: grey;
+}
+
+@media screen and (max-width: 650px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .footerSocialLinks {
+    margin-top: 2rem;
+  }
+}

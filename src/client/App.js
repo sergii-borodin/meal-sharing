@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { MealsContextProvider } from './context'
 //import pages
 import { Home } from './pages/Home/Home'
 import { About } from './pages/About/About'
-import { SingleMeal } from './pages/SingleMeal/SingleMeal'
+import { SingleMealDetail } from './pages/SingleMeal/SingleMealDetail'
 import { Error } from './pages/Error/Error'
+import { AddMealForm } from './pages/AddMealForm/AddMealForm'
 //import components
 import { Navbar } from './components/Navbar/Navbar'
+import { Footer } from './components/Footer/Footer'
 
 function App() {
   return (
@@ -22,13 +24,17 @@ function App() {
             <About />
           </Route>
           <Route path='/meal/:id'>
-            <SingleMeal />
+            <SingleMealDetail />
+          </Route>
+          <Route path='/form'>
+            <AddMealForm />
           </Route>
           <Route path='*'>
             <Error />
           </Route>
         </Switch>
       </MealsContextProvider>
+      <Footer />
     </Router>
   )
 }

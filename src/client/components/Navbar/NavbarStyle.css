@@ -1,12 +1,11 @@
-.navbar {
-  background: whitesmoke;
-  height: 5rem;
+.nav {
+  background: rgba(0, 0, 0, 0);
+  height: fit-content;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid grey;
-  box-shadow: 2px 1px 1px 0px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid grey;
 }
-.nav-center {
+.nav-list-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,4 +30,25 @@
 }
 .nav-links a:hover {
   color: grey;
+}
+
+@media screen and (max-width: 650px) {
+  .nav-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .nav {
+    height: fit-content;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 3rem;
+  }
 }

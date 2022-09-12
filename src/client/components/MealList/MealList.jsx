@@ -21,7 +21,7 @@ export const MealList = () => {
   return (
     <section className='section'>
       <h2 className='section-title'>MEALS</h2>
-      <div className='meals-center'>
+      <div className='meals-list-container'>
         {meals.map((meal) => (
           <Meal key={meal.id} {...meal} />
         ))}
