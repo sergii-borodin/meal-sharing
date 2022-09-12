@@ -5,6 +5,7 @@ import { MealsContext } from '../../context'
 import { Button } from '../../components/Button/Button'
 
 import './SingleMealDetailStyle.css'
+import '../../components/Button/ButtonStyle.css'
 
 export function SingleMealDetail() {
   const { meals, getTodayDate } = useContext(MealsContext)
@@ -115,7 +116,9 @@ export function SingleMealDetail() {
             placeholder='Enter contact email'
             required
           />
-          <button type='submit'>Make reservation</button>
+          <button type='submit' className='btn-one'>
+            Make reservation
+          </button>
         </form>
       ) : (
         <div className='no-seats-message'>

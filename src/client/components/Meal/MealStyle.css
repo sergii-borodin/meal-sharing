@@ -7,7 +7,7 @@
   transition: all 0.3s linear;
   border-radius: 0.25rem;
 
-  background-color: #f1f0f1;
+  background-color: rgba(62, 225, 228, 0.3);
   color: #2e2d2d;
   display: flex;
   flex-direction: column;

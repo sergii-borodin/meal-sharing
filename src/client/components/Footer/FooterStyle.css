@@ -18,3 +18,16 @@
 .contactLink :hover {
   color: grey;
 }
+
+@media screen and (max-width: 650px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .footerSocialLinks {
+    margin-top: 2rem;
+  }
+}

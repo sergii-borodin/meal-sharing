@@ -93,7 +93,7 @@ export const AddMealForm = () => {
           required
         />
         <button type='submit' className='btn-one'>
-          Create Meal-Sharing event
+          Add meal
         </button>
       </form>
     </>

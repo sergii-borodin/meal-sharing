@@ -2,19 +2,6 @@
   text-align: center;
 }
 
-/* .form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 50rem;
-  height: 30rem;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 5rem;
-  margin-bottom: 2rem;
-} */
-
 .form {
   margin: 1rem auto;
   padding: 3rem 5rem;
@@ -36,4 +23,22 @@
   font-size: 1rem;
   border-radius: 0.3rem;
   border: transparent;
+}
+
+@media screen and (max-width: 650px) {
+  .form {
+    width: 30rem;
+  }
+  .form-input {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .form {
+    width: 20rem;
+  }
+  .form-input {
+    width: 15rem;
+  }
 }
