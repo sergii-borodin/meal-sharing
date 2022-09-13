@@ -55,13 +55,15 @@
 }
 
 @media screen and (max-width: 820px) {
-  .meal-description-container .form {
+  .meal-description-container,
+  .form {
     max-width: 30rem;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .meal-description-container .form {
+  .meal-description-container,
+  .form {
     max-width: 20rem;
   }
 }
