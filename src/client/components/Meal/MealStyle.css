@@ -22,12 +22,12 @@
 }
 .meal-description {
   font-size: 1rem;
-  padding: 0 1.5rem;
+  padding: 0 0.5rem;
 }
 .meal-title {
   text-align: center;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 2rem;
 }
 
