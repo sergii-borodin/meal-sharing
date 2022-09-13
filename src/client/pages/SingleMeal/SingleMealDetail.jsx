@@ -54,9 +54,6 @@ export function SingleMealDetail() {
 
   return (
     <section>
-      <Link to='/'>
-        <Button Children={'Back to main'}></Button>
-      </Link>
       <h2 className='section-title'>{title}</h2>
       <ul className='meal-description-container'>
         <li className='meal-description-item'>
@@ -92,28 +89,28 @@ export function SingleMealDetail() {
             name='number_of_guests'
             min='1'
             max={available_reservation}
-            placeholder='Enter number of guests'
+            placeholder='Number of guests'
             required
           />
           <input
             className='form-input'
             type='tel'
             name='contact_phonenumber'
-            placeholder='Enter contact phone number'
+            placeholder='Contact phone number'
             required
           />
           <input
             className='form-input'
             type='text'
             name='contact_name'
-            placeholder='Enter contact name'
+            placeholder='Contact name'
             required
           />
           <input
             className='form-input'
             type='email'
             name='contact_email'
-            placeholder='Enter contact email'
+            placeholder='Contact email'
             required
           />
           <button type='submit' className='btn-one'>
@@ -125,6 +122,9 @@ export function SingleMealDetail() {
           Sorry, no more available seats for this meal
         </div>
       )}
+      <Link to='/'>
+        <Button Children={'Back to main'}></Button>
+      </Link>
     </section>
   )
 }

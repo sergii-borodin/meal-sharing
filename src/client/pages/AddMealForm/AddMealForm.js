@@ -10,13 +10,6 @@ export const AddMealForm = () => {
 
   function addNewMeal(e) {
     e.preventDefault()
-    console.log('title', e.target.title.value)
-    console.log('description', e.target.description.value)
-    console.log('location', e.target.location.value)
-    console.log('when', eventDate)
-    console.log('max_reservations', e.target.max_reservations.value)
-    console.log('price', e.target.price.value)
-    console.log('created_date', getTodayDate())
 
     fetch('api/meals', {
       method: 'POST',

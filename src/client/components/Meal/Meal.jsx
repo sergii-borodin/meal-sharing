@@ -46,19 +46,19 @@ export const Meal = ({
         />
         <ul className='meal-description'>
           <li className='meal-title'>
-            {title.length < 18 ? title : title.slice(0, 18)}
+            {title.length < 18 ? title : title.slice(0, 15)}...
           </li>
           <li className='meal-description'>&#128176; : {price} DKK </li>
           <li className='meal-description'>&#128197; : {when.slice(0, 10)}</li>
           <li className='meal-description'>
             &#128205; :{' '}
-            {location.length < 15 ? location : location.slice(0, 15)}
+            {location.length < 15 ? location : location.slice(0, 15)}...
           </li>
           <li className='meal-description'>
             &#128186; : {available_reservation} seats left
           </li>
           <Link to={`/meal/${id}`}>
-            <Button Children={'Detail'}></Button>
+            <Button Children={'Details'}></Button>
           </Link>
         </ul>
       </div>
