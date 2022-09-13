@@ -1,8 +1,9 @@
 .meal-description-container {
   margin: 1rem auto;
-  max-width: 30rem;
+  max-width: 40rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   line-height: 2rem;
   font-size: 20px;
   border-radius: 5rem;
@@ -10,7 +11,7 @@
 }
 
 .meal-description-item {
-  width: 30rem;
+  max-width: 30rem;
   text-align: center;
   justify-content: center;
   padding: 0.2rem 0.6rem;
@@ -59,11 +60,19 @@
   .form {
     max-width: 30rem;
   }
+  .meal-description-item,
+  .form-input {
+    max-width: 20rem;
+  }
 }
 
 @media screen and (max-width: 650px) {
   .meal-description-container,
   .form {
     max-width: 20rem;
+  }
+  .meal-description-item,
+  .form-input {
+    max-width: 10rem;
   }
 }
