@@ -46,11 +46,6 @@ module.exports = {
       '/api': `http://localhost:${process.env.API_PORT}`,
     },
   },
-  node: {
-    global: false,
-    __filename: false,
-    __dirname: false,
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
