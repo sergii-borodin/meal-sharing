@@ -8,7 +8,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "webpack --mode production",
+    "build": "CI= webpack --mode production",
     "start": "npm run build && node ./src/backend/server",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon ./src/backend/server",
