@@ -32,8 +32,11 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
-  },
+        fallback: {
+            net: false,
+            tls: false,
+        }
+    },
   devServer: {
     publicPath: '/',
     historyApiFallback: true,
