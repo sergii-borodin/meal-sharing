@@ -31,12 +31,13 @@ module.exports = {
       },
     ],
   },
+  {
   resolve: {
-        fallback: {
-            net: false,
-            tls: false,
-        }
-    },
+    fallback: {
+      fs: false
+    }
+  }
+},
   devServer: {
     publicPath: '/',
     historyApiFallback: true,
