@@ -28,6 +28,13 @@
   padding: 0.25rem 0.5rem;
   transition: all 0.3s linear;
 }
+
+.nav-links a.active {
+  text-decoration: underline;
+  font-size: 1.4rem;
+  transition: all 0.5s linear;
+}
+
 .nav-links a:hover {
   color: grey;
 }
