@@ -11,7 +11,9 @@ export const Navbar = () => {
         </Link>
         <ul className="nav-links">
           <li>
-            <NavLink to="/">HOME</NavLink>
+            <NavLink to="/" end>
+              HOME
+            </NavLink>
           </li>
           <li>
             <NavLink to="/form">ADD MEAL</NavLink>
